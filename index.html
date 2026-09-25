@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaio Youtube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="dark-mode">
+
+    <div class="page">
+        <header>
+            <div class="header-left">
+                <button type="button" class="icon-btn" id="menu-btn" aria-label="Menu">
+                    <img id="menu-icon" src="assets/menu.svg" alt="">
+                </button>
+                <div class="brand">
+                    <span class="yt-logo"></span>
+                    <span class="brand-text">Youtube <sup>ZA</sup></span>
+                </div>
+            </div>
+
+            <div class="header-search">
+                <input id="search" type="search" placeholder="Search">
+                <button type="button" class="search-btn" aria-label="Search">
+                    <img id="search-icon" src="assets/search-icon.svg" alt="">
+                </button>
+            </div>
+
+            <div class="header-right">
+                <label for="dark-mode" class="dark-label" title="Dark mode">🌙</label>
+                <button type="button" class="icon-btn header-icon create-btn" aria-label="Create">
+                    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                        <path fill="currentColor" d="M10 18v-6H4v-2h6V4h2v6h6v2h-6v6h-2z"></path>
+                    </svg>
+                </button>
+                <button type="button" class="icon-btn header-icon notif-btn" aria-label="Notifications">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"></path>
+                    </svg>
+                    <span class="notif-dot"></span>
+                </button>
+                <button type="button" class="icon-btn profile-btn" aria-label="Account">
+                    <span class="profile-letter">N</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout">
+            <aside class="sidebar" id="sidebar">
+                <a class="side-link active" href="#">🏠 Home</a>
+                <a class="side-link" href="#">📱 Shorts</a>
+                <a class="side-link" href="#">📺 Subscriptions</a>
+                <hr>
+                <a class="side-link" href="#">📚 Library</a>
+                <a class="side-link" href="#">🕒 History</a>
+                <a class="side-link watch-later-link" href="#watch-later">⭐ Watch later <span id="wl-count" class="wl-count"></span></a>
+            </aside>
+
+            <main class="content">
+                <div class="chips">
+                    <button type="button" class="chip chip-active" data-cat="all">All</button>
+                    <button type="button" class="chip" data-cat="coding">Coding</button>
+                    <button type="button" class="chip" data-cat="music">Music</button>
+                    <button type="button" class="chip" data-cat="gaming">Gaming</button>
+                    <button type="button" class="chip" data-cat="vlogs">Vlogs</button>
+                </div>
+
+                <section class="video-grid" id="video-grid">
+                </section>
+
+                <section class="watch-later-panel" id="watch-later">
+                    <h2>Watch later</h2>
+                    <p class="wl-empty" id="wl-empty">Nothing saved yet — hit ⭐ on a video.</p>
+                    <div class="wl-list" id="wl-list"></div>
+                </section>
+            </main>
+        </div>
+
+        <div class="mini-player hidden" id="mini-player" aria-live="polite">
+            <div class="mini-thumb" id="mini-thumb"></div>
+            <div class="mini-info">
+                <p class="mini-title" id="mini-title"></p>
+                <p class="mini-channel" id="mini-channel"></p>
+            </div>
+            <button type="button" class="mini-close" id="mini-close" aria-label="Close player">✕</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
